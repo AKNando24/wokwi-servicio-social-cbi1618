@@ -1,0 +1,177 @@
+{
+    "version": 1,
+    "author": "Pérez Sánchez Fernando Alberto",
+    "editor": "wokwi",
+    "parts": [
+        {
+            "type": "wokwi-arduino-uno",
+            "id": "uno",
+            "top": 0,
+            "left": 0,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-potentiometer",
+            "id": "pot1",
+            "top": -120,
+            "left": -120,
+            "attrs": {
+                "property": "linear"
+            }
+        },
+        {
+            "type": "wokwi-photoresistor-sensor",
+            "id": "ldr1",
+            "top": -120,
+            "left": 100,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-ntc-temperature-sensor",
+            "id": "ntc1",
+            "top": -120,
+            "left": 280,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-led",
+            "id": "led_pwm",
+            "top": 150,
+            "left": 150,
+            "attrs": {
+                "color": "blue"
+            }
+        },
+        {
+            "type": "wokwi-resistor",
+            "id": "r1",
+            "top": 150,
+            "left": 220,
+            "attrs": {
+                "value": "220"
+            }
+        },
+        {
+            "type": "wokwi-buzzer",
+            "id": "bz1",
+            "top": 240,
+            "left": 150,
+            "attrs": {}
+        }
+    ],
+    "connections": [
+        [
+            "uno:GND.1",
+            "pot1:GND",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "uno:5V",
+            "pot1:VCC",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "uno:A0",
+            "pot1:SIG",
+            "orange",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "uno:GND.1",
+            "ldr1:GND",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "uno:5V",
+            "ldr1:VCC",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "uno:A1",
+            "ldr1:AO",
+            "yellow",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "uno:GND.1",
+            "ntc1:GND",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "uno:5V",
+            "ntc1:VCC",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "uno:A2",
+            "ntc1:OUT",
+            "purple",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "uno:5",
+            "r1:1",
+            "blue",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "r1:2",
+            "led_pwm:A",
+            "blue",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "uno:GND.2",
+            "led_pwm:C",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "uno:3",
+            "bz1:1",
+            "green",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "uno:GND.2",
+            "bz1:2",
+            "black",
+            [
+                "v0"
+            ]
+        ]
+    ],
+    "dependencies": {}
+}
