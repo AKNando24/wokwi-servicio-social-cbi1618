@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "author": "Pérez Sánchez Fernando Alberto",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -60,
+      "left": 160,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -10,
+      "left": 160,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn",
+      "top": 60,
+      "left": 160,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": 140,
+      "left": 160,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot",
+      "top": -120,
+      "left": 260,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "pico:GP15",
+      "r1:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r1:2",
+      "led1:A",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "led1:C",
+      "pico:GND.4",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "pico:GP14",
+      "btn:1.l",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "btn:2.l",
+      "pico:GND.4",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "pico:3V3",
+      "dht:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "pico:GND.4",
+      "dht:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "pico:GP16",
+      "dht:SDA",
+      "yellow",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "pico:3V3",
+      "pot:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "pico:GND.4",
+      "pot:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "pico:GP26",
+      "pot:SIG",
+      "purple",
+      [
+        "v0"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "author": "Pérez Sánchez Fernando Alberto",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -130,
+      "left": 200,
+      "attrs": {
+        "temperature": "26",
+        "humidity": "55"
+      }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr",
+      "top": -130,
+      "left": 320,
+      "attrs": {}
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled",
+      "top": -190,
+      "left": 430,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "b1",
+      "top": 150,
+      "left": 220,
+      "attrs": {
+        "color": "blue",
+        "label": "Pagina"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "b2",
+      "top": 150,
+      "left": 320,
+      "attrs": {
+        "color": "red",
+        "label": "Reset"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 140,
+      "left": 440,
+      "attrs": {
+        "color": "red",
+        "label": "Alarma"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 200,
+      "left": 440,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:3V3",
+      "dht:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "dht:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:4",
+      "dht:SDA",
+      "yellow",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "ldr:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "ldr:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:34",
+      "ldr:AO",
+      "purple",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "oled:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "oled:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:21",
+      "oled:SDA",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:22",
+      "oled:SCL",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:18",
+      "b1:1.l",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "b1:2.l",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:19",
+      "b2:1.l",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "b2:2.l",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:5",
+      "r1:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r1:2",
+      "led1:A",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "led1:C",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}

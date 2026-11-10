@@ -17,7 +17,11 @@ int buttonState = HIGH;
 
 volatile bool requestPedestrian = false;
 
-void IRAM_ATTR handleButtonInterrupt()
+void handleButtonInterrupt();
+void processPedestrianSequence();
+
+// Nota: IRAM_ATTR es solo para ESP32; en Arduino Uno no existe y provoca error de compilación.
+void handleButtonInterrupt()
 {
     requestPedestrian = true;
 }

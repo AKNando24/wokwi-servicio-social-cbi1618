@@ -1,0 +1,441 @@
+{
+  "version": 1,
+  "author": "Pérez Sánchez Fernando Alberto",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -190,
+      "left": 200,
+      "attrs": {
+        "pins": "i2c"
+      }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled",
+      "top": -190,
+      "left": 420,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-74hc595",
+      "id": "sr",
+      "top": 300,
+      "left": 20,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led-bar-graph",
+      "id": "bar",
+      "top": 300,
+      "left": 200,
+      "attrs": {
+        "color": "GYR"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r0",
+      "top": 280,
+      "left": 300,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 300,
+      "left": 300,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 320,
+      "left": 300,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 340,
+      "left": 300,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 360,
+      "left": 300,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": 380,
+      "left": 300,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r6",
+      "top": 400,
+      "left": 300,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r7",
+      "top": 420,
+      "left": 300,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "lcd:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "lcd:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:A4",
+      "lcd:SDA",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:A5",
+      "lcd:SCL",
+      "purple",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5V",
+      "oled:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "oled:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:A4",
+      "oled:SDA",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:A5",
+      "oled:SCL",
+      "purple",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5V",
+      "sr:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "sr:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5V",
+      "sr:MR",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "sr:OE",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:11",
+      "sr:DS",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:13",
+      "sr:SHCP",
+      "gray",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:10",
+      "sr:STCP",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:11",
+      "uno:12",
+      "white",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "sr:Q0",
+      "r0:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r0:2",
+      "bar:A1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "bar:C1",
+      "uno:GND.3",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "sr:Q1",
+      "r1:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r1:2",
+      "bar:A2",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "bar:C2",
+      "uno:GND.3",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "sr:Q2",
+      "r2:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r2:2",
+      "bar:A3",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "bar:C3",
+      "uno:GND.3",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "sr:Q3",
+      "r3:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r3:2",
+      "bar:A4",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "bar:C4",
+      "uno:GND.3",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "sr:Q4",
+      "r4:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r4:2",
+      "bar:A5",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "bar:C5",
+      "uno:GND.3",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "sr:Q5",
+      "r5:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r5:2",
+      "bar:A6",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "bar:C6",
+      "uno:GND.3",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "sr:Q6",
+      "r6:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r6:2",
+      "bar:A7",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "bar:C7",
+      "uno:GND.3",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "sr:Q7",
+      "r7:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r7:2",
+      "bar:A8",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "bar:C8",
+      "uno:GND.3",
+      "black",
+      [
+        "v0"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}

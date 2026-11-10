@@ -1,0 +1,6 @@
+# Le indica a la extensión de Wokwi qué firmware simular.
+# Primero compila con PlatformIO (botón "Build" o `pio run`) y luego inicia la simulación (F1 > Wokwi: Start Simulator).
+[wokwi]
+version = 1
+firmware = '.pio/build/uno/firmware.hex'
+elf = '.pio/build/uno/firmware.elf'

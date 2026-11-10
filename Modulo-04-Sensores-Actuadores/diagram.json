@@ -1,0 +1,304 @@
+{
+  "version": 1,
+  "author": "Pérez Sánchez Fernando Alberto",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultra",
+      "top": -140,
+      "left": 20,
+      "attrs": {
+        "distance": "100"
+      }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -140,
+      "left": 230,
+      "attrs": {
+        "temperature": "24",
+        "humidity": "45"
+      }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo",
+      "top": -60,
+      "left": 320,
+      "attrs": {
+        "horn": "single"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "drv",
+      "top": 140,
+      "left": 320,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "step1",
+      "top": 100,
+      "left": 450,
+      "attrs": {
+        "size": "17",
+        "arrow": "orange"
+      }
+    },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay",
+      "top": 250,
+      "left": 20,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_fan",
+      "top": 300,
+      "left": 200,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_fan",
+      "top": 250,
+      "left": 260,
+      "attrs": {
+        "color": "blue",
+        "label": "Extractor"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "ultra:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5V",
+      "dht:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5V",
+      "servo:V+",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5V",
+      "drv:VDD",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5V",
+      "drv:VMOT",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5V",
+      "relay:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "ultra:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "dht:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "servo:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "drv:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "relay:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:7",
+      "ultra:TRIG",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:6",
+      "ultra:ECHO",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:4",
+      "dht:SDA",
+      "yellow",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:9",
+      "servo:PWM",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:2",
+      "drv:STEP",
+      "purple",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:3",
+      "drv:DIR",
+      "gray",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv:RESET",
+      "drv:SLEEP",
+      "white",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv:1A",
+      "step1:B+",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv:1B",
+      "step1:B-",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv:2A",
+      "step1:A+",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv:2B",
+      "step1:A-",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:8",
+      "relay:IN",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5V",
+      "relay:COM",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "relay:NO",
+      "r_fan:1",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r_fan:2",
+      "led_fan:A",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "led_fan:C",
+      "uno:GND.3",
+      "black",
+      [
+        "v0"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}

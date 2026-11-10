@@ -1,0 +1,422 @@
+{
+  "version": 1,
+  "author": "Pérez Sánchez Fernando Alberto",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -140,
+      "left": 20,
+      "attrs": {
+        "temperature": "27",
+        "humidity": "50"
+      }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -190,
+      "left": 200,
+      "attrs": {
+        "pins": "i2c"
+      }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled",
+      "top": -190,
+      "left": 420,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "mx",
+      "top": -100,
+      "left": 600,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-7segment",
+      "id": "seg",
+      "top": 260,
+      "left": 0,
+      "attrs": {
+        "digits": "4",
+        "common": "anode",
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn",
+      "top": 260,
+      "left": 330,
+      "attrs": {
+        "color": "blue",
+        "label": "Modo"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rsA",
+      "top": 300,
+      "left": 120,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rsB",
+      "top": 318,
+      "left": 120,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rsC",
+      "top": 336,
+      "left": 120,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rsD",
+      "top": 354,
+      "left": 120,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rsE",
+      "top": 372,
+      "left": 120,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rsF",
+      "top": 390,
+      "left": 120,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rsG",
+      "top": 408,
+      "left": 120,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "dht:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5V",
+      "lcd:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5V",
+      "oled:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5V",
+      "mx:VCC",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "dht:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "lcd:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "oled:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.2",
+      "mx:GND",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:12",
+      "dht:SDA",
+      "yellow",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:A4",
+      "lcd:SDA",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:A5",
+      "lcd:SCL",
+      "purple",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:A4",
+      "oled:SDA",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:A5",
+      "oled:SCL",
+      "purple",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:11",
+      "mx:DIN",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:10",
+      "mx:CS",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:13",
+      "mx:CLK",
+      "gray",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:2",
+      "rsA:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "rsA:2",
+      "seg:A",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:3",
+      "rsB:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "rsB:2",
+      "seg:B",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:4",
+      "rsC:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "rsC:2",
+      "seg:C",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:5",
+      "rsD:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "rsD:2",
+      "seg:D",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:6",
+      "rsE:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "rsE:2",
+      "seg:E",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:7",
+      "rsF:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "rsF:2",
+      "seg:F",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:8",
+      "rsG:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "rsG:2",
+      "seg:G",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:9",
+      "seg:DIG1",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:A0",
+      "seg:DIG2",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:A1",
+      "seg:DIG3",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:A2",
+      "seg:DIG4",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:A3",
+      "btn:1.l",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.3",
+      "btn:2.l",
+      "black",
+      [
+        "v0"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}
